@@ -2,8 +2,12 @@ package com.demoqa;
 
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static com.codeborne.selenide.Selenide.open;
 
 
 public class TestPracticeForm {
@@ -14,9 +18,17 @@ public class TestPracticeForm {
         Configuration.browserSize = "1024x768";
     }
     @BeforeEach
-    static  void beforeTest(){
-
+    void beforeTest() {
+        Selenide.clearBrowserCookies();
     }
+        @Test
+                void StudentRegistrationFormTest(){
+        open("automation-practice-form");
+        
+
+        }
+
+
 
 
 }
