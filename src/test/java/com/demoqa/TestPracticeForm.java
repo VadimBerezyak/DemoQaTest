@@ -34,10 +34,18 @@ public class TestPracticeForm {
         $x("//option[@value = '0']").click();
         $x("//option[@value = '1900']").click();
         $x("//div[@aria-label = 'Choose Monday, January 1st, 1900']").click();
+        $("#subjectsInput").click();
+        $("#subjectsInput").setValue("Maths").pressEnter();
+        $("#subjectsInput").setValue("English").pressEnter();
+        $("[for= 'hobbies-checkbox-3']").click();
+        $("[for= 'hobbies-checkbox-3']").click();
+        $("[for= 'hobbies-checkbox-3']").click();
+//        $("#hobbies-checkbox-1").setSelected(true);             ???
+//        $("#hobbies-checkbox-2").setSelected(true);               ???
+//        $("#hobbies-checkbox-3").setSelected(true);                  ???
 
-        $("#gender-radio-2").click();
 
-            //input[@name = 'gender']
+
 
         }
 
