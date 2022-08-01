@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -30,19 +32,24 @@ public class TestPracticeForm {
         $("#userEmail").setValue("berez@mail.ru");
         $("[for='gender-radio-1']").click();
         $("#userNumber").setValue("+79999999999");
+
         $("#dateOfBirthInput").click();
         $x("//option[@value = '0']").click();
         $x("//option[@value = '1900']").click();
         $x("//div[@aria-label = 'Choose Monday, January 1st, 1900']").click();
+
         $("#subjectsInput").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
         $("#subjectsInput").setValue("English").pressEnter();
+
+        $("[for= 'hobbies-checkbox-1']").click();
+        $("[for= 'hobbies-checkbox-2']").click();
         $("[for= 'hobbies-checkbox-3']").click();
-        $("[for= 'hobbies-checkbox-3']").click();
-        $("[for= 'hobbies-checkbox-3']").click();
-//        $("#hobbies-checkbox-1").setSelected(true);             ???
-//        $("#hobbies-checkbox-2").setSelected(true);               ???
-//        $("#hobbies-checkbox-3").setSelected(true);                  ???
+
+        $("#uploadPicture").uploadFile(new File("src/test/resources/theCat.jpg"));
+
+
+
 
 
 
