@@ -9,29 +9,32 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
 public class TestPracticeForm {
     @BeforeAll
-    static void configure(){
+    static void configure() {
         Configuration.baseUrl = "https://demoqa.com/";
         Configuration.browser = "firefox";
         Configuration.browserSize = "1024x768";
     }
+
     @BeforeEach
     void beforeTest() {
         Selenide.clearBrowserCookies();
     }
-        @Test
-        void StudentRegistrationFormTest(){
+
+    @Test
+    void StudentRegistrationFormTest() {
         open("automation-practice-form");
 
         $("#firstName").setValue("Vadim");
         $("#lastName").setValue("Berezyak");
         $("#userEmail").setValue("berez@mail.ru");
         $("[for='gender-radio-1']").click();
-        $("#userNumber").setValue("+79999999999");
+        $("#userNumber").setValue("79999999999");
 
         $("#dateOfBirthInput").click();
         $x("//option[@value = '0']").click();
@@ -48,15 +51,17 @@ public class TestPracticeForm {
 
         $("#uploadPicture").uploadFile(new File("src/test/resources/theCat.jpg"));
 
+        $("#currentAddress").setValue("USSR, Red Square");
+        $("#currentAddress").setValue("USSR, Red Square");
 
+        $("#state").click();
+        $(byText("Haryana")).click();
+        $("#city").click();
+        $(byText("Karnal")).click();
 
+        $("#submit").click();
 
-
-
-
-        }
-
-
+    }
 
 
 }
