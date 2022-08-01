@@ -55,8 +55,7 @@ public class TestPracticeForm {
         $("#city").click();
         $(byText("Karnal")).click();
         $("#submit").click();
-        SelenideElement tableResponsive = $(".table-responsive");
-        tableResponsive.shouldHave(
+        $(".table-responsive").shouldHave(
                 text("Vadim Berezyak"),
                 text("berez@mail.ru"),
                 text("Male"),
