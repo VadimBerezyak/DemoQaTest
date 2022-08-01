@@ -20,7 +20,7 @@ public class TestPracticeForm {
     static void configure() {
         Configuration.baseUrl = "https://demoqa.com/";
         Configuration.browser = "firefox";
-        Configuration.browserSize = "1024x768";
+        Configuration.browserSize = "1920x1080";
     }
 
     @BeforeEach
