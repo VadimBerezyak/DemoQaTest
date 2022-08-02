@@ -3,7 +3,6 @@ package com.demoqa;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -42,7 +41,7 @@ public class TestPracticeForm {
         $(".react-datepicker__year-select").click();
         $(".react-datepicker__year-select").selectOption("1900");
         $(".react-datepicker__day--001").click();
-        $(byText("Submit")).scrollTo();
+        $("#submit").scrollTo();
         $("#subjectsInput").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
         $("#subjectsInput").setValue("English").pressEnter();
