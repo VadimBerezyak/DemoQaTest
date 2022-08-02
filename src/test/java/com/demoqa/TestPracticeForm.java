@@ -37,9 +37,11 @@ public class TestPracticeForm {
         $("[for='gender-radio-1']").click();
         $("#userNumber").setValue("7999999999");
         $("#dateOfBirthInput").click();
-        $x("//option[@value = '0']").click();
-        $x("//option[@value = '1900']").click();
-        $x("//div[@aria-label = 'Choose Monday, January 1st, 1900']").click();
+        $(".react-datepicker__month-select").click();
+        $(".react-datepicker__month-select").selectOption("January");
+        $(".react-datepicker__year-select").click();
+        $(".react-datepicker__year-select").selectOption("1900");
+        $(".react-datepicker__day--001").click();
         $(byText("Submit")).scrollTo();
         $("#subjectsInput").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
